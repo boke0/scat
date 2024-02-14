@@ -1,0 +1,24 @@
+<.header>
+  Rooms
+  <:actions>
+    <div class="fixed z-10 bottom-0 right-0 pr-6 pb-6">
+      <.link patch={~p"/rooms/new"}>
+        <.button class="px-0">
+          <.icon name="hero-plus" class="w-5 h-5" />
+        </.button>
+      </.link>
+    </div>
+  </:actions>
+</.header>
+
+
+<.modal :if={@live_action in [:new, :edit]} id="room-modal" show on_cancel={JS.patch(~p"/rooms")}>
+  <.live_component
+    module={ScatWeb.RoomLive.FormComponent}
+    id={@room.id || :new}
+    title={@page_title}
+    action={@live_action}
+    room={@room}
+    patch={~p"/rooms"}
+  />
+</.modal>

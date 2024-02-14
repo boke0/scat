@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:14.5-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: "develop"
+      POSTGRES_USER: "develop"
+      POSTGRES_PASSWORD: "password"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+  postgres_test:
+    image: postgres:14.5-alpine
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_DB: "develop_test"
+      POSTGRES_USER: "develop"
+      POSTGRES_PASSWORD: "password"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
