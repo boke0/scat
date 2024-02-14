@@ -1,4 +1,10 @@
-# Scat: End-to-end encrypted chat app
+# Scat
+
+<div align="center">
+  <img src="https://github.com/boke0/scat/assets/48381296/4969a1bf-5958-42bf-9377-9815af9c091b" />
+</div>
+
+End-to-end encrypted chat app.
 
 ## Stacks
 
