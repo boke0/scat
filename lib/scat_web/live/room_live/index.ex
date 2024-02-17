@@ -6,7 +6,11 @@ defmodule ScatWeb.RoomLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, stream(socket, :rooms, Chat.list_rooms())}
+    {
+      :ok,
+      stream(socket, :rooms, Chat.list_rooms()),
+      layout: false
+    }
   end
 
   @impl true
